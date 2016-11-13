@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Webrequest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,79 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-Uk-HO6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2n-SZ-4NU">
+                                <rect key="frame" x="260" y="570" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="rpd-7I-FrM"/>
+                                </constraints>
+                                <state key="normal" title="Buzzfeed"/>
+                                <connections>
+                                    <action selector="loadBuzzfeed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFh-tk-8As"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYl-N6-Z8j">
+                                <rect key="frame" x="506" y="569" width="74" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EZc-P5-ELC"/>
+                                    <constraint firstAttribute="width" constant="74" id="GHH-Lf-lov"/>
+                                    <constraint firstAttribute="width" constant="74" id="f9I-X8-fsJ"/>
+                                </constraints>
+                                <state key="normal" title="Facebook"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EZc-P5-ELC"/>
+                                        <exclude reference="f9I-X8-fsJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loadFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PeJ-jQ-sMk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUV-56-Afy">
+                                <rect key="frame" x="20" y="569" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="WS2-6j-CGf"/>
+                                </constraints>
+                                <state key="normal" title="Netflix"/>
+                                <connections>
+                                    <action selector="loadNetflix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIb-rq-0TO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CwJ-Uk-HO6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BEb-fK-xFP"/>
+                            <constraint firstItem="cYl-N6-Z8j" firstAttribute="baseline" secondItem="oUV-56-Afy" secondAttribute="baseline" id="Crl-RB-YIk"/>
+                            <constraint firstItem="cYl-N6-Z8j" firstAttribute="top" secondItem="CwJ-Uk-HO6" secondAttribute="bottom" constant="8" id="G6i-oQ-GZr"/>
+                            <constraint firstItem="J2n-SZ-4NU" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="HBw-BC-Hey"/>
+                            <constraint firstItem="CwJ-Uk-HO6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Htb-af-jQ5"/>
+                            <constraint firstItem="CwJ-Uk-HO6" firstAttribute="centerX" secondItem="J2n-SZ-4NU" secondAttribute="centerX" id="Jgp-Vm-nc8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oUV-56-Afy" secondAttribute="bottom" constant="1" id="ZOg-NF-VIr"/>
+                            <constraint firstItem="oUV-56-Afy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gdN-wY-keu"/>
+                            <constraint firstAttribute="trailing" secondItem="CwJ-Uk-HO6" secondAttribute="trailing" id="hD9-L9-zHF"/>
+                            <constraint firstItem="oUV-56-Afy" firstAttribute="top" secondItem="CwJ-Uk-HO6" secondAttribute="bottom" constant="8" symbolic="YES" id="kuj-6r-yHQ"/>
+                            <constraint firstItem="cYl-N6-Z8j" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="x1T-Vb-Oh8"/>
+                            <constraint firstItem="cYl-N6-Z8j" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="z4Q-yw-jsC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="G6i-oQ-GZr"/>
+                                <exclude reference="z4Q-yw-jsC"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="CwJ-Uk-HO6" id="0aO-rR-G69"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="380" y="337"/>
         </scene>
     </scenes>
 </document>
